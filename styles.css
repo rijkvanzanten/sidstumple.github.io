@@ -1,0 +1,464 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100vw;
+    max-width: 100vw;
+    flex-direction: column;
+    font-family: "Open Sans",  sans-serif;
+}
+
+h1, legend {
+    font-family: inherit;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.centerBig {
+    font-size: 4em;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+p {
+    font-family: inherit;
+    font-size: 0.9em;
+}
+
+main {
+    max-width: 100vw;
+    transition: 1s;
+}
+
+/*Main Navigation*/
+
+/*arrow down, from https://css-tricks.com/snippets/css/css-triangle/*/
+
+.arrow-down {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    border-left: 1em solid transparent;
+    border-right: 1em solid transparent;
+    border-top: 1em solid white;
+    margin: 0 auto;
+    margin-top: -2.3em;
+}
+
+/*nav button starts here*/
+.navButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.mainNav {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 20em;
+    background: black;
+    margin-top: -16em;
+    transition: 1s ease-in-out;
+}
+
+.mainNav h1 {
+    color: white;
+    display: flex;
+    text-transform: uppercase;
+    margin-bottom: .7em;
+    justify-content: center;
+    text-decoration: none;
+    transition: 1s ease;
+    margin-top: 1.1em;
+}
+
+.mainNav ul {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20em;
+}
+
+.mainNav ul li ul li a {
+    color: #999;
+}
+
+
+.mainNav ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+ul li a {
+    font-family: inherit;
+    font-size: 0.8em;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 900;
+    padding-top: 2em;
+}
+
+/*First ul in listitem, dropdown element is invisible unless hovered on products.*/
+.mainNav li > ul {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+}
+
+
+/*De-Emphasize op menu*/
+#openMenu:target {
+     margin-top: 0;
+}
+
+#openMenu:target > a > div {
+    opacity: 1;
+    transform: rotate(180deg);
+    transition: 1s ease;
+}
+
+#openMenu:target > a > h1 {
+    opacity: 0;
+}
+
+#openMenu:target + main {
+    filter: blur(0.4em);
+}
+
+/*end main navigation*/
+
+
+/*Standard flexy two item row*/
+.twoItemRow {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+/*Standard two column element markup*/
+.twoColumnElement {
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 25.5em;
+    width: 50%;
+    padding: 4em 0 2em 0;
+    flex-grow: 1;
+    box-sizing: border-box;
+    color: white;
+}
+
+
+
+
+/*login section*/
+.logIn {
+    background: #85BAA1;
+}
+
+.logIn > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*smaller labels than default font-size*/
+.logIn form label, .logIn form a {
+    font-weight: 800;
+    font-size: 0.8em;
+    letter-spacing: .15em;
+    color: white;
+    text-transform: uppercase;
+}
+
+.logIn form label + a {
+    align-self: flex-end;
+    margin: 0.5em 0;
+    font-size: 0.5em;
+}
+
+/*checkbox becomes inline element*/
+input[type="checkbox"] {
+    padding: 0;
+    margin-top: 0.3em;
+}
+
+.logIn form label[for="field-stay-logged-in"] {
+    display: block;
+    padding-left: 2em;
+    margin-top: -1.4em;
+    padding-bottom: 1em;
+    color: #ddd;
+}
+
+/*input fields custom*/
+input[type="password"], input[type="email"] {
+    height: 2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    width: 20em;
+}
+/*custom button*/
+button[type="submit"] {
+    height: 3em;
+    background: none;
+    border: 0.4em white solid;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
+
+button[type="submit"]:hover {
+    background: white;
+    color: #389C90;
+}
+
+
+/*Finish order section*/
+.finishOrder {
+    background: #6E8894;
+    font-weight: 800;
+    font-size: 0.8em;
+    letter-spacing: .15em;
+    color: white;
+    text-transform: uppercase;
+    padding: 4em;
+    flex-basis: 50vw;
+}
+
+.finishOrder nav {
+    display: flex;
+    flex-direction: column;
+    padding: 4em 0 2em 0;
+    width: 100%;
+}
+
+.finishOrder a {
+    color: white;
+}
+
+/*Changes appearance of every ordered list sibling of progress*/
+progress + ol {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 0;
+}
+
+progress + ol li {
+    list-style-type: none;
+    display: flex;
+    color: #ddd;
+}
+
+
+/*Used tips to style progress bar from: https://css-tricks.com/html5-progress-element/*/
+
+progress {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 2em;
+    width: 100%;
+}
+
+progress[value]::-webkit-progress-bar {
+    background: white;
+}
+
+progress[value]::-webkit-progress-value {
+    background: #85BAA1;
+}
+
+progress[value]::-moz-progress-bar {
+    background: #85BAA1;
+}
+
+progress[value] {
+    background: white;
+    border: none;
+}
+
+
+/*Both articles*/
+.twoItemRow article {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2em;
+}
+
+.twoItemRow article > h1 {
+    margin-top: 0;
+    color: white;
+    text-transform: uppercase;
+}
+
+.twoItemRow article > h1 > a {
+    color: currentColor;
+}
+
+/*First article*/
+.twoItemRow > article:first-of-type {
+    background: #595959;
+    
+}
+
+.twoItemRow > article:nth-of-type(2) {
+    background: #80CED6;
+}
+
+
+/*images*/
+img {
+    width: 100%;
+    height: auto;
+}
+
+.smallImg {
+    width: 50%;
+    height: 50%;
+}
+
+
+.innerTwoItemRow {
+    display: flex;
+    flex-direction: row;
+    max-width: 100vw;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+.innerTwoColumnElement {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 48%;
+    min-width: 11em;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+/*Select whole figure element*/
+figure {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+
+
+/*rating*/
+.rating {
+    padding-top: 1em;
+    font-size: 0.6em;
+}
+
+.rating label:hover {
+    font-size: 1em;
+}
+
+
+.ratingRow {
+    display: flex;
+    flex-direction: row;
+    width: 140%;
+    padding: 0;
+    justify-content: space-between;
+}
+
+
+/*customize fieldset*/
+fieldset {
+    border: none;
+    display: flex;
+    height: 4em;
+    padding: 0;
+}
+
+fieldset legend {
+    padding: 0;
+}
+
+fieldset [type="radio"] {
+  display: none;
+}
+
+fieldset svg {
+  display: flex;
+  width: 1.5em;
+}
+
+.rating > fieldset label {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+label[for="rating-0"]:target {
+    
+}
+
+.chat {
+    display: flex;
+    background: #85BAA1;
+    margin: 0;
+    color: white;
+    padding: 2em;
+}
+
+.chat ol li {
+    list-style-type: none;
+}
+
+ol + form[action="/"] {
+    display: flex;
+    flex-direction: column;
+    width: 50%;  
+}
+
+label[for="field-message"] {
+    margin-bottom: 1em;
+}
+
+textarea[name="field-message"] {
+    border: none;
+    height: 20em;
+    box-sizing: border-box;
+}
+
+textarea + button[type="submit"] {
+    margin-top: 2em;
+}
+
+/*select all 1st p's in li of the chat*/
+.chat ol li > p:first-of-type {
+    color: #595959;
+}
+
+/*Select all p's in footer of the chat*/
+ol li footer p {
+    font-weight: 900;
+    font-size: 0.6em;
+    text-transform: uppercase;
+}
+
+
+
+
+/*mediaqueries*/
+@media (max-width: 57.813em) {
+    .innerTwoColumnElement {
+        flex-grow: 1;
+        width: 100%;
+    }
+    .centerBig {
+        font-size: 2em;
+    }
+}
