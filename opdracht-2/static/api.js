@@ -5,7 +5,7 @@ function getUserQuery() {
     var config = {
         userQuery : document.getElementById("user-input-field").value,
         _apiUrl :'https://www.rijksmuseum.nl/api/nl/collection?key=epHseGj4&format=json&q='
-    }
+    };
     
     
     
@@ -20,10 +20,11 @@ function getUserQuery() {
                 _html += '<div class="media-item"> <h1>' +element.principalOrFirstMaker + '</h1> <p>' + element.title + '</p>';
 
                 if (element.webImage !== null) {
-                    _html += '<img src = "' + element.webImage.url + '" alt = ' + element.title + '/> </div>'
+                    _html += '<img src = "' + element.webImage.url + '" alt = ' + element.title + '/> </div>';
                 } else {
-                    _html += '<p> Er is helaas geen foto beschikbaar.</p> </div>'
+                    _html += '<p class="no-photo"> Er is helaas geen foto beschikbaar.</p> <img src = "img/nophoto.png" alt = "er is geen afbeelding beschikbaar"/> </div>';
                 }
+                
                 });
             document.getElementById("queryResult").innerHTML = _html;
         })

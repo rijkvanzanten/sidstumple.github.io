@@ -85,7 +85,7 @@ main {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background: url(../img/laptop.jpg) center;
+    background: url(../img/molen.jpg) center;
     background-size: cover;
 }
 
@@ -105,7 +105,8 @@ main {
     align-items: center;
     width: 100vw;
     background: white;
-    margin: 1em 0;
+    margin-bottom: 1em;
+    margin-top: 4em;
     height: 20em;
 }
 
@@ -158,6 +159,17 @@ input#user-input-field:focus, button:focus {
     display: none;
 }
 
+.no-photo {
+    position: absolute;
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    margin-top: 16em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+    width: 20em;
+}
 
 
 
