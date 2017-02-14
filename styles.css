@@ -16,14 +16,14 @@ h1, legend {
 }
 
 .centerBig {
-    font-size: 4em;
+    font-size: 6vw;
     display: flex;
     justify-content: center;
     width: 100vw;
 }
 
 p {
-    font-family: inherit;
+    font-family: 'Scope One', serif;
     font-size: 0.9em;
 }
 
@@ -71,7 +71,7 @@ main {
     justify-content: center;
     text-decoration: none;
     transition: 1s ease;
-    margin-top: 1.1em;
+    margin-top: 2.4em;
 }
 
 .mainNav ul {
@@ -105,7 +105,8 @@ ul li a {
 .mainNav li > ul {
     display: flex;
     flex-direction: row;
-    padding: 1em;
+    padding: 0 1em;
+
 }
 
 
@@ -156,7 +157,7 @@ ul li a {
 
 /*login section*/
 .logIn {
-    background: #85BAA1;
+    background: #595959;
 }
 
 .logIn > form {
@@ -219,13 +220,13 @@ button[type="submit"]:hover {
 
 /*Finish order section*/
 .finishOrder {
-    background: #6E8894;
+    background: #80CED6;
     font-weight: 800;
     font-size: 0.8em;
     letter-spacing: .15em;
     color: white;
     text-transform: uppercase;
-    padding: 4em;
+    padding: 5vw;
     flex-basis: 50vw;
 }
 
@@ -271,7 +272,7 @@ progress[value]::-webkit-progress-bar {
 }
 
 progress[value]::-webkit-progress-value {
-    background: #85BAA1;
+    background: #595959;
 }
 
 progress[value]::-moz-progress-bar {
@@ -291,24 +292,44 @@ progress[value] {
     padding: 2em;
 }
 
-.twoItemRow article > h1 {
+.twoItemRow article > div > h1 {
     margin-top: 0;
-    color: white;
+    color: #444;
     text-transform: uppercase;
 }
 
-.twoItemRow article > h1 > a {
+.twoItemRow article > div > h1 > a {
     color: currentColor;
 }
 
 /*First article*/
 .twoItemRow > article:first-of-type {
-    background: #595959;
+    background: #85BAA1;
     
 }
 
+article.media {
+    background: white;
+    color: #444;
+    padding: 5vw;
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+
+.media > .whiteContainer {
+    background: white;
+    padding: 1em;
+}
+
+/*second article*/
 .twoItemRow > article:nth-of-type(2) {
-    background: #80CED6;
+    background: #6E8894;
+}
+
+article.picture {
+    padding: 5vw;
+    padding-top: 2em;
+    padding-bottom: 3em;
 }
 
 
@@ -316,11 +337,6 @@ progress[value] {
 img {
     width: 100%;
     height: auto;
-}
-
-.smallImg {
-    width: 50%;
-    height: 50%;
 }
 
 
@@ -342,8 +358,9 @@ img {
     min-width: 11em;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
+
+
 
 /*Select whole figure element*/
 figure {
@@ -351,8 +368,20 @@ figure {
     flex-direction: column;
     margin: 0;
 }
+/*figcaption*/
+figcaption {
+    background: white;
+    color: #444;
+    padding: 1em;
+}
 
 
+figure > h1 {
+    background: white;
+    padding: 1em;
+    margin: 0;
+    color: #444;
+}
 
 /*rating*/
 .rating {
@@ -368,11 +397,11 @@ figure {
 .ratingRow {
     display: flex;
     flex-direction: row;
-    width: 140%;
+    width: 100%;
     padding: 0;
     justify-content: space-between;
+    padding-top: .5em;
 }
-
 
 /*customize fieldset*/
 fieldset {
@@ -399,6 +428,9 @@ fieldset svg {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    font-weight: 900;
+    font-size: 0.8em;
+    text-transform: uppercase;
 }
 
 label[for="rating-0"]:target {
@@ -409,12 +441,87 @@ label[for="rating-0"]:target {
     display: flex;
     background: #85BAA1;
     margin: 0;
-    color: white;
+    color: #444;
     padding: 2em;
 }
 
-.chat ol li {
+.chat ol li {        
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
     list-style-type: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/*Every odd element is pushed to the left*/
+.chat ol li:nth-child(2n+1) {
+    align-items: flex-end;
+}
+
+
+.chat ol li > p {
+    background: white;
+    border-radius: 0.8em;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-top: 1em;    
+    font-family: "Open Sans", sans-serif;
+    font-weight: 900;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.chat ol li p {
+    font-family: "Open Sans", sans-serif;
+}
+
+.chat ol li footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 0.8em;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #6E8894;
+    color: white;
+    width: 40vw;
+    box-sizing: border-box;
+}
+
+.chat ol li:nth-child(2n+1) footer {
+    border-radius: 0.8em;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #595959;
+
+}
+
+.chat ol li footer p {
+    margin: 0;
+    padding: 0.5em;
+}
+
+p[data-status="READ"] {
+    color: #85BAA1;
+}
+
+p[data-status="DELIVERED"] {
+    color: #ddd;
+}
+
+/*select all 1st p's in li of the chat*/
+.chat ol li > p:first-of-type {
+    color: #444;
+    font-size: 1em;
+    margin-bottom: 0;
+    width: 40vw;
+    box-sizing: border-box;
 }
 
 ol + form[action="/"] {
@@ -424,29 +531,37 @@ ol + form[action="/"] {
 }
 
 label[for="field-message"] {
+    font-family: "Scope One", serif;
     margin-bottom: 1em;
 }
-
+ 
+/*text area*/
 textarea[name="field-message"] {
     border: none;
     height: 20em;
     box-sizing: border-box;
 }
+.textareaContainer {
+    padding: 1em;
+}
+
 
 textarea + button[type="submit"] {
     margin-top: 2em;
 }
 
-/*select all 1st p's in li of the chat*/
-.chat ol li > p:first-of-type {
-    color: #595959;
+
+
+/*Select all footers of this doc*/
+footer {
+    font-weight: 900;
+    font-size: 0.8em;
+    text-transform: uppercase;
 }
 
-/*Select all p's in footer of the chat*/
-ol li footer p {
-    font-weight: 900;
-    font-size: 0.6em;
-    text-transform: uppercase;
+/*all links in footers*/
+footer a{
+    color: #80CED6;
 }
 
 
@@ -458,7 +573,12 @@ ol li footer p {
         flex-grow: 1;
         width: 100%;
     }
-    .centerBig {
-        font-size: 2em;
+    
+    .chat ol li > p:first-of-type {
+        width: 70vw;
     }
+    .chat ol li footer {
+        width: 70vw;
+    }
+    
 }
