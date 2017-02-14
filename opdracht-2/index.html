@@ -1,0 +1,45 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Cyd's Single-Page Web App</title>
+    <meta name="description" content="Cyd's Single-Page Web App">
+    <meta name="author" content="Cyd Stumpel">
+    <link rel="stylesheet" href="static/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800|Scope+One" rel="stylesheet">
+    </head>
+
+</head>
+
+<body>
+    <nav>
+        <ul id="navUl">
+            
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rijksmuseum">Rijksmuseum Search</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="startScreen" id="home">
+            <h1>Cyd's Single-Page Web App</h1>
+        </section>
+        <section class="bestPractices" id="rijksmuseum" >
+            <div class="searchField">
+               <h1>Bekijk alle kunstwerken van het Rijksmuseum!</h1>
+                <p>Voer een zoekterm in:</p>
+                <input type="text" id="user-input-field" required>&nbsp;
+                <button type="button" onclick="getUserQuery()">Submit</button>
+            </div>
+
+            <article id="queryResult">
+<!--                Hier wordt content ingeladen via de API van het Rijksmuseum-->
+            </article>
+        </section>
+    </main>
+    <script src="static/app.js"></script>
+    <script src="static/aja.js-0.4.1/aja.min.js"></script>
+    <script src="static/api.js"></script>
+</body>
+</html>
