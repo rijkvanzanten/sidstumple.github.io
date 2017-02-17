@@ -9,11 +9,9 @@
     <meta name="author" content="Cyd Stumpel">
     <link rel="stylesheet" href="static/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800|Scope+One" rel="stylesheet">
-    </head>
-
 </head>
 
-<body>
+<body> 
     <nav>
         <ul id="navUl">
             
@@ -29,17 +27,40 @@
             <div class="searchField">
                <h1>Bekijk alle kunstwerken van het Rijksmuseum!</h1>
                 <p>Voer een zoekterm in:</p>
-                <input type="text" id="user-input-field" required>&nbsp;
-                <button type="button" onclick="getUserQuery()">Submit</button>
+                <form class="column">
+                    <input type="text" id="user-input-field" autofocus required>
+                    <button type="submit" id="getUserQuery">Submit</button>
+                </form>
             </div>
 
             <article id="queryResult">
 <!--                Hier wordt content ingeladen via de API van het Rijksmuseum-->
             </article>
         </section>
+        <section id="kunstObject">
+            <article id="detailKunst"></article>
+                
+        </section>
     </main>
-    <script src="static/app.js"></script>
-    <script src="static/aja.js-0.4.1/aja.min.js"></script>
-    <script src="static/api.js"></script>
+
+    <script src="static/js/aja.min.js"></script>
+    <script src="static/js/routie.min.js"></script>
+    <script src="static/js/transparency.min.js"></script>
+    <script src="static/js/handlebars.js"></script>
+    <script src="static/js/app.js"></script>
+    <script id="detail-template" type="text/x-handlebars-template">
+            <div class="detail-item" id={{idRoute}}>
+                <img src={{imageSource}} alt={{title}}>
+                
+                 
+                <a href="#rijksmuseum"><img src="img/back.svg" alt="previous-page"></a>
+                <div class="container">
+                    <h1>{{title}}</h1>
+                    <p>{{description}}</p><p> Gemaakt door: {{artist}}</p>
+                </div>
+            </div>
+        </script>
+    
+    
 </body>
 </html>
